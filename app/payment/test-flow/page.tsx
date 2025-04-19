@@ -1,9 +1,7 @@
 import axios from "axios";
 import PaymentButton from "./payment-button";
-import { PrismaClient } from "@/app/generated/prisma";
 
 export default async function TestPayment() {
-  const prisma = PrismaClient;
   const productDetails = await axios.get(
     `${process.env.NEXT_PUBLIC_APP_URL}/api/lemon-squeezy/products`
   );
