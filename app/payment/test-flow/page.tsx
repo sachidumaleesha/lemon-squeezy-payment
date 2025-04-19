@@ -1,10 +1,9 @@
 import axios from "axios";
 import PaymentButton from "./payment-button";
+import { getAllProducts } from "@/lib/lemon-squeezy/product-service";
 
 export default async function TestPayment() {
-  const productDetails = await axios.get(
-    `${process.env.NEXT_PUBLIC_APP_URL}/api/lemon-squeezy/products`
-  );
+  const productDetails = await getAllProducts();
 
   return (
     <div className="min-h-screen flex justify-center items-center">
